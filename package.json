@@ -10,7 +10,8 @@
     "test:verbose": "jest",
     "build": "tsc",
     "start:nodemon": "npx nodemon src/index.ts",
-    "start:ts-node-dev": "npx ts-node-dev src/index.ts"
+    "start:dev": "npx ts-node-dev src/index.ts",
+    "start:prod": "webpack && node dist"
   },
   "keywords": [
     "nodejs",
