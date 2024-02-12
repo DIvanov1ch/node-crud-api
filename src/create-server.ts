@@ -2,17 +2,17 @@ import { createServer } from 'node:http';
 import { validate } from 'uuid';
 
 import { Users_DB } from './users.db';
-import { sendResponse } from './utils/sendResponse';
+import { sendResponse } from './utils/send-response';
 import { StatusCode } from './enums/status-codes';
 import {
   getInvalidEndpointMessage,
   getInvalidUserIdMessage,
-  getUserDoesntExistMessage
+  getUserDoesntExistMessage,
 } from './utils/messages';
-import { ENDPOINT } from './constants/';
+import { ENDPOINT } from './constants';
 import { User } from './models/user.model';
-import { handleBaseEndpoint } from './utils/handleBaseEndpoint';
-import { handleEndpointWithId } from './utils/handleEndpointWithId';
+import { handleBaseEndpoint } from './utils/handle-base-endpoint';
+import { handleEndpointWithId } from './utils/handle-endpoint-with-id';
 
 export const create = (port: string | number) => {
   const server = createServer((req, res) => {
@@ -44,4 +44,4 @@ export const create = (port: string | number) => {
   });
 
   server.listen(port, () => console.log(`Server started on port: ${port}`));
-}
+};
