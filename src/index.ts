@@ -1,7 +1,6 @@
-import { DEFAULT_SERVER_PORT } from "./constants";
-import { create } from "./createServer";
-import 'dotenv/config';
+import { create } from './create-server';
+import { getServerPort } from './utils/get-server-port';
 
-const serverPort = process.env.PORT || DEFAULT_SERVER_PORT;
+const serverPort = getServerPort();
 
 create(serverPort);
